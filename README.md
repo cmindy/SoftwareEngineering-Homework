@@ -2,11 +2,11 @@
 
 ## System Architecture
 
-![그림1](./assets/그림1.png)
+![SystemArchitecture](./assets/SystemArchitecture.png)
 
 ## Interface Design
 
-![image-20181126153843507](./assets/image-20181126153843507-3214323.png)
+![InterfaceDesign](./assets/InterfaceDesign.png)
 
 
 
