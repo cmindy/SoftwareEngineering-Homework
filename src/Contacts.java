@@ -3,6 +3,7 @@ public class Contacts {
 	private String name;
 	private String phone;
 	private String email;
+	ContactsItem[] contactsStorage;
 	
 	public void selectContacts(int select){
 		switch (select){
