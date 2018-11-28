@@ -2,6 +2,7 @@ public class ToDoList {
 
     final int MAX_CNT=100;
     static ToDoList instance=null;
+    int count = 0;
 
     ToDoItem[] toDoStorage=new ToDoItem[MAX_CNT];
 
