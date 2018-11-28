@@ -7,17 +7,19 @@ public class Main {
         select = MenuViewer.scan.nextInt();
         MenuViewer.scan.nextLine();
 
+        ToDoList toDoList = ToDoList.createManagerInstance();
+
         switch (select) {
             case 1:
                 break;
             case 2:
                 break;
             case 3:
+            	AppointmentsItem[] appointment = new AppointmentsItem;
                 break;
             case 4:
                 System.out.println("Management Program Exit...");
                 break;
-
         }
 
     }
