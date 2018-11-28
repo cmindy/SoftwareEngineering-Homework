@@ -7,6 +7,8 @@ public class Main {
         select = MenuViewer.scan.nextInt();
         MenuViewer.scan.nextLine();
 
+        ToDoList toDoList = ToDoList.createManagerInstance();
+
         switch (select) {
             case 1:
                 break;
