@@ -15,11 +15,11 @@ public class Main {
             case 2:
                 break;
             case 3:
+            	AppointmentsItem[] appointment = new AppointmentsItem;
                 break;
             case 4:
                 System.out.println("Management Program Exit...");
                 break;
-
         }
 
     }
