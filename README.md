@@ -78,8 +78,9 @@
 ### Submission
 
 - Upload your report to the Snowboard
-- Due: 2018.11.29 (Thu) 23:55
+- Due: **2018.11.29 (Thu) 23:55**
 - Notes on Homework #3
   - You don’t have to finish the development of the software in HW#2
   - However, you will be required to finish the development of the software and test the software using a unit testing framework in HW#3
   - Tentative due: 12.21 (Fri)
+
