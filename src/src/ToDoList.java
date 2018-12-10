@@ -14,7 +14,7 @@ public class ToDoList {
     public void selectToDoList() {
         while (true) {
             System.out.println("1.Create,2.View,3.Update,4.Delete");
-            System.out.print("ì„ íƒ>>");
+            System.out.print("ÀÔ·Â>>");
             int select = MenuViewer.scan.nextInt();
             MenuViewer.scan.nextLine();
             switch (select) {
