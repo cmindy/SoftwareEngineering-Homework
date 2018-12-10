@@ -30,6 +30,7 @@ public class Contacts {
 				System.out.print("email:");
 				email = stdIn.next();
 				
+				createContacts(name,phone,email);
 				break;
 			case 2:
 				viewContacts();
@@ -50,7 +51,10 @@ public class Contacts {
 
 	}
 	
-	private void createContacts(){
+	private void createContacts(String name, String phone,String email){
+		contactsStorage[count].name = name;
+		contactsStorage[count].phone = phone;
+		contactsStorage[count].email = email;
 		
 	}
 	
