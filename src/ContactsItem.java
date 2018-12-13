@@ -5,6 +5,6 @@ public class ContactsItem {
 	String email;
 	
 	void showContactsItem(){
-		
+		System.out.println(name + " " + phone + " " + email);
 	}
 }

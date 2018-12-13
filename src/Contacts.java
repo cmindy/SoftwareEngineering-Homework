@@ -10,25 +10,24 @@ public class Contacts {
 	ContactsItem[] contactsStorage = new ContactsItem[MAX_CNT];
 	
 	Scanner scan = new Scanner(System.in);
+	Scanner scannum = new Scanner(System.in);
 	
 	public void selectContacts(){
-		
-		
+
 		do{
 			System.out.println("[1.Create Contacts 2.View Contacts 3.Update Contacts"
 				+ " 4.Delete Contacts 5.Main Menu]");
-			selectmenu = scan.nextInt();
+			selectmenu = scannum.nextInt();
 		
 			switch (selectmenu){
 			case 1:
-				Scanner stdIn = new Scanner(System.in);
 
-				System.out.print("name:");
-				name = stdIn.next();
-				System.out.print("phone:");
-				phone = stdIn.next();
-				System.out.print("email:");
-				email = stdIn.next();
+				System.out.println("name:");
+				name = scan.nextLine();
+				System.out.println("phone:");
+				phone = scan.nextLine();
+				System.out.println("email:");
+				email = scan.nextLine();
 				
 				createContacts(name,phone,email);
 				break;
@@ -36,12 +35,10 @@ public class Contacts {
 				viewContacts();
 				break;
 			case 3:
-				viewContacts();
-				System.out.print("");
+				updateContacts();
 				break;
 			case 4:
-				viewContacts();
-				System.out.print("");
+				deleteContacts();
 				break;
 			}
 			
@@ -52,21 +49,50 @@ public class Contacts {
 	}
 	
 	private void createContacts(String name, String phone,String email){
+		contactsStorage[count] = new ContactsItem();
+		
 		contactsStorage[count].name = name;
 		contactsStorage[count].phone = phone;
 		contactsStorage[count].email = email;
+		count++;
 		
 	}
 	
 	private void viewContacts(){
-		
+		for (int i = 0; i < count; i++){
+			System.out.print(i +" ");
+			contactsStorage[i].showContactsItem();
+		}
 	}
 	
 	private void updateContacts(){
+		int index;
 		
+		viewContacts();
+		System.out.println("insert index to update:");
+		index = scannum.nextInt();
+		System.out.println("new name:");
+		contactsStorage[index].name = scan.nextLine();
+		System.out.println("new phone:");
+		contactsStorage[index].phone = scan.nextLine();
+		System.out.println("new email:");
+		contactsStorage[index].email = scan.nextLine();
+		
+		System.out.println("Update completed");
+		viewContacts();
 	}
 	
 	private void deleteContacts(){
+		int index;
 		
+		viewContacts();
+		System.out.println("insert index to delete:");
+		index = scannum.nextInt();
+		for (int i = index; i < count; i++){
+			contactsStorage[i] = contactsStorage[i+1];
+		}
+		count--;
+		System.out.println("Deletion completed");
+		viewContacts();
 	}
 }
