@@ -1,3 +1,5 @@
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import java.util.Scanner;
 
 public class Appointments {
@@ -9,13 +11,11 @@ public class Appointments {
 
 	public void selectAppointments() {
 		while(true) {
-			
 	        System.out.println("===============Appointments Menu==============");
 			System.out.println("1.Create");
 			System.out.println("2.View");
 			System.out.println("3.Update");
 			System.out.println("4.Delete");
-			System.out.println("5.Main Menu");	
 	        System.out.println("===============================================");	
 			System.out.print("selet> ");
 	        select = scan.nextInt();	
@@ -33,10 +33,6 @@ public class Appointments {
 				case 4: 
 					deleteAppointments();
 					break;
-				case 5:
-					MenuViewer.showMenu();
-					break;
-					
 			}
 		}	
 	}
@@ -47,28 +43,45 @@ public class Appointments {
         
         if(numOfArray == 0) {
            System.out.println("저장된 약속이 없습니다.");
-           emptyFlag = false;
+           return false;
         }
         else if((selectIndex > numOfArray)||(selectIndex < isEmpty)) {
            System.out.println("선택한 인덱스에 해당하는 약속이 없습니다.");
-           emptyFlag = false;
+           return false;
         }
         else {
-           emptyFlag = true;
+           return true;
         }
-        return emptyFlag;
      }
 	
 	public AppointmentsItem enterAppointmentsInfo() {
+		boolean nullFlag;
 		System.out.print("date:");
         String date= scan.next();
         System.out.print("person:");
         String person = scan.next();
         System.out.print("location:");
         String location = scan.next();
-        return new AppointmentsItem(date, person, location);
+        AppointmentsItem info = new AppointmentsItem(date, person, location);
+        nullFlag = isNullArray(info);
+        if(nullFlag) {
+        	return info;
+        }
+        else {
+        	System.out.println("입력되지 않은 내용이 있습니다.");
+        	return enterAppointmentsInfo();
+        }
 	}
 	
+	public boolean isNullArray(AppointmentsItem info) {
+		if(info.date == null || info.person == null || info.location == null) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
 	public void createAppointments() {
 		AppointmentsItem info = enterAppointmentsInfo();
 		appointments[numOfArray++] = info;
@@ -76,7 +89,7 @@ public class Appointments {
 	}
 	
 	public void viewAppointments() {
-        System.out.println("---------------Appointments List---------------");
+		System.out.println("---------------Appointments List---------------");
         for(int idx = 0; idx < numOfArray; idx++) {
            System.out.print((idx+1)+ " )");
            System.out.println(" date: "+ appointments[idx].date +
