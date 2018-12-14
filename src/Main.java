@@ -8,8 +8,9 @@ public class Main {
         MenuViewer.scan.nextLine();
         
         Contacts contacts = new Contacts();
-
         ToDoList toDoList = ToDoList.createManagerInstance();
+        Appointments appointments =  new Appointments();
+        
         while (select != 4){
         	
 	        switch (select) {
@@ -19,8 +20,11 @@ public class Main {
 	            case 2:
 	                break;
 	            case 3:
-	            	
+	            	appointments.selectAppointments();
 	                break;
+	            case 4:
+	            	System.out.println("EXIT");
+	            	return;
 	        
 	        }
 	        MenuViewer.showMenu();
