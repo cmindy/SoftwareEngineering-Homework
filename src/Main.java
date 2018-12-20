@@ -1,9 +1,6 @@
-package src;
-
 public class Main {
 
     public static void main(String[] args) {
-
         int select;
         MenuViewer.showMenu();
         select = MenuViewer.scan.nextInt();
@@ -14,12 +11,12 @@ public class Main {
         Appointments appointments =  new Appointments();
         
         while (select != 4){
-        	
 	        switch (select) {
 	            case 1:
 	            	contacts.selectContacts();
 	                break;
 	            case 2:
+	            	toDoList.selectToDoList();
 	                break;
 	            case 3:
 	            	appointments.selectAppointments();
@@ -27,7 +24,6 @@ public class Main {
 	            case 4:
 	            	System.out.println("EXIT");
 	            	return;
-	        
 	        }
 	        MenuViewer.showMenu();
 	        select = MenuViewer.scan.nextInt();

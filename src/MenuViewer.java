@@ -1,5 +1,3 @@
-package src;
-
 import java.util.Scanner;
 
 public class MenuViewer {
@@ -14,6 +12,4 @@ public class MenuViewer {
         System.out.println("4.Exit");
         System.out.print("Select: ");
     }
-
-
 }

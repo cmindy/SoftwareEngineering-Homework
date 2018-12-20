@@ -1,7 +1,3 @@
-package src;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
 import java.util.Scanner;
 
 public class Appointments {
@@ -44,11 +40,11 @@ public class Appointments {
         int isEmpty = 0;
         
         if(numOfArray == 0) {
-           System.out.println("ÀúÀåµÈ ¾à¼ÓÀÌ ¾ø½À´Ï´Ù.");
+           System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
            return false;
         }
         else if((selectIndex > numOfArray)||(selectIndex < isEmpty)) {
-           System.out.println("¼±ÅÃÇÑ ÀÎµ¦½º¿¡ ÇØ´çÇÏ´Â ¾à¼ÓÀÌ ¾ø½À´Ï´Ù.");
+           System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
            return false;
         }
         else {
@@ -70,7 +66,7 @@ public class Appointments {
         	return info;
         }
         else {
-        	System.out.println("ÀÔ·ÂµÇÁö ¾ÊÀº ³»¿ëÀÌ ÀÖ½À´Ï´Ù.");
+        	System.out.println("ï¿½Ô·Âµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.");
         	return enterAppointmentsInfo();
         }
 	}
@@ -87,7 +83,7 @@ public class Appointments {
 	public void createAppointments() {
 		AppointmentsItem info = enterAppointmentsInfo();
 		appointments[numOfArray++] = info;
-		System.out.println("¾à¼Ó ÀÔ·Â ¿Ï·á");
+		System.out.println("ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Ï·ï¿½");
 	}
 	
 	public void viewAppointments() {
@@ -102,7 +98,7 @@ public class Appointments {
 	}
 	
 	public void updateAppointments() { 
-		System.out.print("¼öÁ¤ÇÒ ÀÎµ¦½º ÀÔ·Â> ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ô·ï¿½> ");
 		int selectIndex = scan.nextInt();
 		update(selectIndex);
 	}
@@ -112,19 +108,19 @@ public class Appointments {
        boolean emptyFlag = checkArrayIsEmpty(selectIndex);
        
        if(emptyFlag) {
-           System.out.println("¼öÁ¤ÇÒ ³»¿ë ÀÔ·Â>");
+           System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½>");
             System.out.print("date:");
             appointments[selectIndex-1].date = scan.next();
             System.out.print("due:");
             appointments[selectIndex-1].person = scan.next();
             System.out.print("description:");
             appointments[selectIndex-1].location = scan.next();
-           System.out.println("¼öÁ¤ ¿Ï·á");
+           System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
         }
     }
     
     public void deleteAppointments() {
-		System.out.print("»èÁ¦ÇÒ ÀÎµ¦½º ÀÔ·Â> ");
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ô·ï¿½> ");
 		int selectIndex = scan.nextInt();
 		delete(selectIndex);
     }
@@ -137,7 +133,7 @@ public class Appointments {
             for(int idx=(selectIndex-1); idx < (numOfArray-1); idx++)
                 appointments[idx] = appointments[idx+1];
             numOfArray--;
-            System.out.println("»èÁ¦ ¿Ï·á");
+            System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
         }
     }
 }

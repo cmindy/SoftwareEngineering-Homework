@@ -1,4 +1,3 @@
-package src;
 
 class AppointmentsItem {
     String date;

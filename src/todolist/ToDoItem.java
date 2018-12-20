@@ -1,4 +1,3 @@
-package src;
 
 public class ToDoItem {
     String date;
@@ -10,6 +9,7 @@ public class ToDoItem {
         this.due = due;
         this.description = description;
     }
+
     public void showToDoItem() {
         System.out.println("date: " + date);
         System.out.println("due: " + due);

@@ -1,11 +1,10 @@
-package src;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
 class AppointmentsTest {
 	Appointments appointment =  new Appointments();
-	AppointmentsItem appointments = new AppointmentsItem("2018/10/12", "¾çÀ¯Á¤", null);
+	AppointmentsItem appointments = new AppointmentsItem("2018/10/12", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", null);
 	int selectIndex;
 	boolean flag;
 	
