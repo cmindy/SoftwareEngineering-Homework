@@ -1,3 +1,5 @@
+package src;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.Scanner;

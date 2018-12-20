@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Scanner;
 
 public class Contacts {
@@ -5,7 +7,7 @@ public class Contacts {
 	private String name;
 	private String phone;
 	private String email;
-	private int count = 0;
+	private int count = 1;
 	int selectmenu;
 	ContactsItem[] contactsStorage = new ContactsItem[MAX_CNT];
 	
@@ -88,11 +90,16 @@ public class Contacts {
 		viewContacts();
 		System.out.println("insert index to delete:");
 		index = scannum.nextInt();
+		decreaseArrays(index);
+		System.out.println("Deletion completed");
+		viewContacts();
+	}
+	
+	public int decreaseArrays(int index) {
 		for (int i = index; i < count; i++){
 			contactsStorage[i] = contactsStorage[i+1];
 		}
 		count--;
-		System.out.println("Deletion completed");
-		viewContacts();
+		return count;
 	}
 }

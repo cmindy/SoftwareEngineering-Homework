@@ -1,3 +1,5 @@
+package src;
+
 class AppointmentsItem {
     String date;
     String person;
